@@ -1,0 +1,71 @@
+.contactForm {
+  display: flex;
+  background-color: rgb(200, 203, 226);
+}
+
+.form {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(45, 68, 93);
+  justify-content: center;
+  align-items: flex-start;
+  width: 270px;
+  height: 350px;
+  border-radius: 30px;
+}
+
+.inputName {
+  color: rgb(200, 203, 226);
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.inputName:hover,
+.inputName:focus {
+  color: rgb(102, 135, 173);
+}
+.formInput {
+  background-color: rgb(200, 203, 226);
+  color: rgb(45, 68, 93);
+  font-size: 20px;
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+.formInput:hover,
+.formInput:focus {
+  background-color: rgb(174, 178, 209);
+}
+
+.formInput::placeholder {
+  color: rgb(45, 68, 93);
+  font-size: 20px;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.submitButton {
+  text-transform: lowercase;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(102, 135, 173);
+  width: 120px;
+  height: 50px;
+  border: 1px solid rgb(56, 76, 99);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-transform: inherit;
+  border: none;
+}
+.submitButton:hover,
+.submitButton:focus {
+  background-color: rgb(92, 119, 151);
+  color: rgb(56, 76, 99);
+}

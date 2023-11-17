@@ -1,0 +1,87 @@
+.mainTitle {
+  display: block;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(102, 135, 173);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(200, 203, 226);
+  justify-content: center;
+  gap: 70px;
+}
+.title {
+  display: flex;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: rgb(73, 83, 95);
+  font-size: 30px;
+}
+.mainTitle:focus,
+.mainTitle:hover {
+  color: rgb(73, 83, 95);
+}
+
+.titleContacts {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin: 0, auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: rgb(73, 83, 95);
+  font-size: 30px;
+}
+
+.titleContacts:hover,
+.titleContacts:focus,
+.title:hover,
+.title:focus {
+  color: rgb(102, 135, 173);
+}
+
+.noContacts {
+  margin: 0, auto;
+  padding-top: 20px;
+  text-align: center;
+  color: rgb(73, 83, 95);
+  font-size: 36px;
+}
+.noContacts:hover,
+.noContacts:focus {
+  color: rgb(102, 135, 173);
+}
+
+.mainTitle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.mainTitle:before,
+.mainTitle:after {
+  content: '';
+  position: absolute;
+  left: 25%;
+  top: 0;
+  width: 50%;
+  height: 70%;
+  background: #5b87a4;
+  transform-origin: right, bottom;
+  transition: transform 1000ms ease;
+  z-index: -1;
+  transform: scaleX(0);
+  filter: blur(40px);
+}
+
+.mainTitle:hover::before,
+.mainTitle:hover::after {
+  color: rgb(73, 83, 95);
+  transform-origin: center;
+  transform: scaleX(1);
+}

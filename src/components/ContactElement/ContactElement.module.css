@@ -1,0 +1,25 @@
+.buttonDelete {
+  text-transform: lowercase;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(102, 135, 173);
+  width: 120px;
+  height: 30px;
+  border: 1px solid rgb(56, 76, 99);
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: inherit;
+  border: none;
+}
+.buttonDelete:hover,
+.buttonDelete:focus {
+  background-color: rgb(92, 119, 151);
+  color: rgb(56, 76, 99);
+}
+.itemContact {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
