@@ -13,7 +13,11 @@ export function ContactForm() {
   const dispatch = useDispatch();
 
   const handleAddContact = (name, number) => {
-    if (contacts.find(contact => contact.name === name)) {
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
       alert(`${name}  is already in contacts`);
       return;
     }
@@ -23,6 +27,7 @@ export function ContactForm() {
       number,
     };
     dispatch(addContacts(finalContacts));
+    reset();
   };
 
   const reset = () => {
@@ -33,7 +38,6 @@ export function ContactForm() {
   const handleSubmit = event => {
     event.preventDefault();
     handleAddContact(name, number);
-    reset();
   };
 
   const handleInputChange = event => {

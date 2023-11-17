@@ -22,7 +22,9 @@ export const App = () => {
             <Filter />
           ) : (
             <p className={css.noContacts}>
-              &#128064;Add your first contact! Your phonebook is empty.&#128064;
+              <span className={css.noSpan}>&#128064;</span> Add your first
+              contact! Your phonebook is empty.
+              <span className={css.noSpan}>&#128064;</span>
             </p>
           )}
           {contacts.length > 0 && <ContactList />}

@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: rgb(200, 203, 226);
   justify-content: center;
   gap: 70px;
 }
@@ -19,7 +18,7 @@
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  color: rgb(73, 83, 95);
+  color: #a0ddf0;
   font-size: 30px;
 }
 .mainTitle:focus,
@@ -34,7 +33,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
   text-align: center;
-  color: rgb(73, 83, 95);
+  color: #a0ddf0;
   font-size: 30px;
 }
 
@@ -42,46 +41,72 @@
 .titleContacts:focus,
 .title:hover,
 .title:focus {
-  color: rgb(102, 135, 173);
+  color: white;
 }
 
 .noContacts {
   margin: 0, auto;
   padding-top: 20px;
   text-align: center;
-  color: rgb(73, 83, 95);
+  color: rgb(102, 135, 173);
   font-size: 36px;
 }
 .noContacts:hover,
 .noContacts:focus {
-  color: rgb(102, 135, 173);
+  color: #a0ddf0;
 }
-
 .mainTitle {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-.mainTitle:before,
-.mainTitle:after {
-  content: '';
-  position: absolute;
-  left: 25%;
-  top: 0;
-  width: 50%;
-  height: 70%;
-  background: #5b87a4;
-  transform-origin: right, bottom;
-  transition: transform 1000ms ease;
-  z-index: -1;
-  transform: scaleX(0);
-  filter: blur(40px);
+  font-size: 4em;
 }
 
-.mainTitle:hover::before,
-.mainTitle:hover::after {
-  color: rgb(73, 83, 95);
-  transform-origin: center;
-  transform: scaleX(1);
+.mainTitle,
+.noSpan {
+  position: relative;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20.1%,
+  25%,
+  35.1%,
+  45%,
+  50.1%,
+  60%,
+  65.1%,
+  70%,
+  75.1%,
+  80%,
+  90.1%,
+  92%,
+  99% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,
+  20%,
+  25.1%,
+  35%,
+  40.1%,
+  50%,
+  60.1%,
+  65%,
+  70.1%,
+  75%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
 }
