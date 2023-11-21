@@ -2,6 +2,7 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 import { useSelector } from 'react-redux';
+import Loader from '../Loader/Loader';
 
 import css from './App.module.css';
 
@@ -19,7 +20,10 @@ export const App = () => {
         <div>
           <h2 className={css.titleContacts}>Contacts</h2>
           {contacts.length > 0 ? (
-            <Filter />
+            <>
+              <Loader />
+              <Filter />
+            </>
           ) : (
             <p className={css.noContacts}>
               <span className={css.noSpan}>&#128064;</span> Add your first
