@@ -1,4 +1,7 @@
 .buttonDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-transform: lowercase;
   font-size: 20px;
   color: #a0ddf0;
@@ -21,4 +24,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+}
+.iconDelete {
+  padding-left: 30px;
 }

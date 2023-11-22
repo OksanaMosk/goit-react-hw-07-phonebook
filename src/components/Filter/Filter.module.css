@@ -1,17 +1,23 @@
 .formlFind {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .labelFind {
-  text-align: center;
-  color: rgb(45, 68, 93);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  color: #a0ddf0;
   width: 230px;
   font-size: 20px;
 }
 
 .inputFind {
+  align-items: center;
+  display: flex;
   font-size: 20px;
   color: rgb(45, 68, 93);
   padding-left: 20px;

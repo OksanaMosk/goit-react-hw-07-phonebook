@@ -11,15 +11,21 @@ export function ContactForm() {
   const [number, setNumber] = useState('');
   const contacts = useSelector(state => state.contactsStore.contacts);
   const dispatch = useDispatch();
+  const mpFailure = 'https://audio.code.org/losepoint1.mp3';
 
+  const mpSuccess = 'https://audio.code.org/goal2.mp3';
   const handleAddContact = (name, number) => {
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
+      new Audio(mpFailure).play();
       Notiflix.Notify.failure(`${name}  is already in contacts`, {
-        timeout: 6000,
+        timeout: 1000,
+        width: '300px',
+        borderRadius: '20px',
+        backOverlay: true,
       });
       return;
     }
@@ -28,8 +34,12 @@ export function ContactForm() {
       name,
       number,
     };
-    Notiflix.Notify.success(`${name}  is added to contacts`, {
-      timeout: 6000,
+    new Audio(mpSuccess).play();
+    Notiflix.Notify.success(`${name} is added to contacts`, {
+      timeout: 1000,
+      width: '300px',
+      borderRadius: '20px',
+      backOverlay: true,
     });
 
     dispatch(addContacts(finalContacts));

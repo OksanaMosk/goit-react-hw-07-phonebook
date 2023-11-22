@@ -1,5 +1,6 @@
 .menu {
   display: flex;
+  gap: 50px;
   justify-content: center;
   padding-bottom: 50px;
   padding-top: 50px;
@@ -74,10 +75,11 @@
   align-items: center;
   color: #a0ddf0;
   font-size: 24px;
-  transition: all;
+  transition: all 0.25s;
+  transition: all 0.25s allow-discrete;
   margin-right: 50px;
 }
 
 .title:active {
-  background-color: #0a2d39;
+  background-color: #0a2d39 !important;
 }
