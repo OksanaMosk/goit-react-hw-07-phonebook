@@ -1,0 +1,83 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.mainTitle {
+  display: block;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(102, 135, 173);
+  font-size: 4em;
+  position: relative;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20.1%,
+  25%,
+  35.1%,
+  45%,
+  50.1%,
+  60%,
+  65.1%,
+  70%,
+  75.1%,
+  80%,
+  90.1%,
+  92%,
+  99% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,
+  20%,
+  25.1%,
+  35%,
+  40.1%,
+  50%,
+  60.1%,
+  65%,
+  70.1%,
+  75%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
+}
+
+.title {
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 170px;
+  height: 30px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  justify-content: center;
+  align-items: center;
+  color: #a0ddf0;
+  font-size: 24px;
+  transition: all;
+  margin-right: 50px;
+}
+
+.title:active {
+  background-color: #0a2d39;
+}

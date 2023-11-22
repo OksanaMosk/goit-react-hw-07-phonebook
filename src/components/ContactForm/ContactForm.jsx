@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { addContacts } from 'redux/contacts/contacts.reducer';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Notiflix from 'notiflix';
 import css from './ContactForm.module.css';
 
 export function ContactForm() {
@@ -18,7 +18,9 @@ export function ContactForm() {
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      alert(`${name}  is already in contacts`);
+      Notiflix.Notify.failure(`${name}  is already in contacts`, {
+        timeout: 6000,
+      });
       return;
     }
     const finalContacts = {
@@ -26,6 +28,10 @@ export function ContactForm() {
       name,
       number,
     };
+    Notiflix.Notify.success(`${name}  is added to contacts`, {
+      timeout: 6000,
+    });
+
     dispatch(addContacts(finalContacts));
     reset();
   };

@@ -1,39 +1,19 @@
-import { ContactForm } from '../ContactForm/ContactForm';
-import { ContactList } from '../ContactList/ContactList';
-import { Filter } from '../Filter/Filter';
-import { useSelector } from 'react-redux';
-import Loader from '../Loader/Loader';
-
-import css from './App.module.css';
+// import Loader from '../Loader/Loader';
+import { Route, Routes } from 'react-router-dom';
+// import css from './App.module.css';
+import HomePage from 'pages/HomePage/HomePage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import AddPage from 'pages/AddPage/AddPage';
+import Layout from 'components/Layout/Layout';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contactsStore.contacts);
-
   return (
-    <>
-      <h1 className={css.mainTitle}>Phonebook</h1>
-      <div className={css.container}>
-        <div>
-          <h2 className={css.title}>Add contact</h2>
-          <ContactForm />
-        </div>
-        <div>
-          <h2 className={css.titleContacts}>Contacts</h2>
-          {contacts.length > 0 ? (
-            <>
-              <Loader />
-              <Filter />
-            </>
-          ) : (
-            <p className={css.noContacts}>
-              <span className={css.noSpan}>&#128064;</span> Add your first
-              contact! Your phonebook is empty.
-              <span className={css.noSpan}>&#128064;</span>
-            </p>
-          )}
-          {contacts.length > 0 && <ContactList />}
-        </div>
-      </div>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/add" element={<AddPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Routes>
+    </Layout>
   );
 };
