@@ -3,12 +3,12 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://655fadc5879575426b45a7ec.mockapi.io';
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/get',
-  async (id, thunkAPI) => {
+  'contacts/fetchAll',
+  async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/contacts');
-      console.log('data: ', data);
-      return data;
+      const response = await axios.get('/contacts');
+      console.log('data: ', response.data);
+      return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
@@ -16,7 +16,7 @@ export const fetchContacts = createAsyncThunk(
 );
 
 export const addContacts = createAsyncThunk(
-  'addContacts/add',
+  'contacts/addContacts',
   async (name, phone, id, thunkAPI) => {
     try {
       const response = await axios.post('/contacts', name, phone, id);
@@ -29,10 +29,10 @@ export const addContacts = createAsyncThunk(
 );
 
 export const deleteContacts = createAsyncThunk(
-  'contacts/delete',
+  'contacts/deleteContacts',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/tasks/${id}`);
+      const response = await axios.delete(`/contacts/${id}`);
       console.log(' datadelete: ', response.data);
       return response.data;
     } catch (e) {
@@ -98,7 +98,7 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContacts.fulfilled, (state, { payload }) => {
         state.contacts = state.contacts.filter(
-          contact => contact.id === payload.id
+          contact => contact.id !== payload.id
         );
         state.isLoading = false;
       })

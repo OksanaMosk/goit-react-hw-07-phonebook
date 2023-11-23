@@ -20,10 +20,8 @@ const ContactsPage = () => {
       >
         Go back
       </NavLink>
-
-      {contacts.length > 0 ? (
+      {contacts.length !== 0 ? (
         <>
-          {/* <Loader /> */}
           <Filter />
         </>
       ) : (
@@ -33,7 +31,7 @@ const ContactsPage = () => {
           <span className={css.noSpan}>&#128064;</span>
         </p>
       )}
-      {contacts.length > 0 && <ContactList />}
+      <ContactList />
     </div>
   );
 };

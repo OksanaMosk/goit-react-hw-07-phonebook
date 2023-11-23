@@ -17,7 +17,9 @@ export function ContactForm() {
   const handleAddContact = (name, phone) => {
     if (
       contacts.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
+        contact =>
+          contact.name.toString().toLowerCase() ===
+          name.toString().toLowerCase()
       )
     ) {
       new Audio(mpFailure).play();
