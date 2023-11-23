@@ -9,8 +9,8 @@ import css from './ContactList.module.css';
 export const ContactList = () => {
   const id = useParams();
   const contacts = useSelector(state => state.contactsStore.contacts);
-  const isLoading = useSelector(state => state.contactsStore.isLoading);
-  const error = useSelector(state => state.contactsStore.error);
+  // const isLoading = useSelector(state => state.contactsStore.isLoading);
+  // const error = useSelector(state => state.contactsStore.error);
   const filter = useSelector(state => state.filterStore.filter);
   const dispatch = useDispatch();
 
