@@ -3,15 +3,15 @@ import axios from 'axios';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/get',
-  async (id, thunkApi) => {
+  async (id, thunkAPI) => {
     try {
-      const data = await axios.get(
+      const { data } = await axios.get(
         'https://655fadc5879575426b45a7ec.mockapi.io/contacts'
       );
       console.log('data: ', data);
       return data;
     } catch (err) {
-      return thunkApi.rejectWithValue(err.message);
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
