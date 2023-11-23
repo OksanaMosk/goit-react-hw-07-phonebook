@@ -8,13 +8,13 @@ import css from './ContactForm.module.css';
 
 export function ContactForm() {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const contacts = useSelector(state => state.contactsStore.contacts);
   const dispatch = useDispatch();
   const mpFailure = 'https://audio.code.org/losepoint1.mp3';
 
   const mpSuccess = 'https://audio.code.org/goal2.mp3';
-  const handleAddContact = (name, number) => {
+  const handleAddContact = (name, phone) => {
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -32,7 +32,7 @@ export function ContactForm() {
     const finalContacts = {
       id: nanoid(),
       name,
-      number,
+      phone,
     };
     new Audio(mpSuccess).play();
     Notiflix.Notify.success(`${name} is added to contacts`, {
@@ -48,12 +48,12 @@ export function ContactForm() {
 
   const reset = () => {
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    handleAddContact(name, number);
+    handleAddContact(name, phone);
   };
 
   const handleInputChange = event => {
@@ -64,8 +64,8 @@ export function ContactForm() {
         setName(value);
         break;
       }
-      case 'number': {
-        setNumber(value);
+      case 'phone': {
+        setPhone(value);
         break;
       }
       default:
@@ -98,12 +98,12 @@ export function ContactForm() {
           <p className={css.inputName}>Number</p>
           <input
             type="tel"
-            name="number"
+            name="phone"
             id={numberInputId}
-            value={number}
+            value={phone}
             onChange={handleInputChange}
             className={css.formInput}
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="000-00-00"
             autoComplete="on"
             autoFocus

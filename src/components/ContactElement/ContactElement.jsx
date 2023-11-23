@@ -1,9 +1,9 @@
 import css from './ContactElement.module.css';
 import svgDelete from '../../images/delete.png';
-export const ContactElement = ({ id, name, number, onRemoveContact }) => {
+export const ContactElement = ({ id, name, phone, onRemoveContact }) => {
   return (
     <li className={css.itemContact} key={id}>
-      <p>{name + ':  ' + number}</p>
+      <p>{name + ':  ' + phone}</p>
       {
         <button
           className={css.buttonDelete}
