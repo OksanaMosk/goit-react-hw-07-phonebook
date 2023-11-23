@@ -104,7 +104,7 @@ export function ContactForm() {
             onChange={handleInputChange}
             className={css.formInput}
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            placeholder="000-00-00"
+            placeholder="000-000-0000"
             autoComplete="on"
             autoFocus
             required
