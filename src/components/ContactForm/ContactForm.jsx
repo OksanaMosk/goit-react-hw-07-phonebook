@@ -3,13 +3,14 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { addContacts } from 'redux/contacts/contacts.reducer';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from 'redux/contacts/contacts.selector';
 import Notiflix from 'notiflix';
 import css from './ContactForm.module.css';
 
 export function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const contacts = useSelector(state => state.contactsStore.contacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const mpFailure = 'https://audio.code.org/losepoint1.mp3';
 

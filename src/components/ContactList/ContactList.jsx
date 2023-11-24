@@ -3,15 +3,17 @@ import { useParams } from 'react-router-dom';
 import { ContactElement } from '../ContactElement/ContactElement';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContacts, fetchContacts } from 'redux/contacts/contacts.reducer';
+import { selectContacts } from 'redux/contacts/contacts.selector';
+import { selectFilterTerm } from 'redux/filter/filter.selector';
 
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
   const id = useParams();
-  const contacts = useSelector(state => state.contactsStore.contacts);
-  const filterTerm = useSelector(state => state.filterStore.filterTerm);
+  const contacts = useSelector(selectContacts);
+  const filterTerm = useSelector(selectFilterTerm);
   const dispatch = useDispatch();
-  const mpDelete = 'https://audio.code.org/failure3.mp3';
+  const mpDelete = 'https://audio.code.org/goal2.mp3';
 
   useEffect(() => {
     dispatch(fetchContacts(id));

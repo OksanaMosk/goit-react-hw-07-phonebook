@@ -1,5 +1,6 @@
 import css from './HomePage.module.css';
 import photo from 'images/pngimg.com - thunder_PNG49.png';
+
 const HomePage = () => {
   return (
     <div className={css.homePage}>

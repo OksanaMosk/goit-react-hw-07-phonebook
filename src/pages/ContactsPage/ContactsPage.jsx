@@ -10,11 +10,16 @@ import css from './ContactsPage.module.css';
 import { useRef } from 'react';
 import Page404 from 'pages/Page404/Page404';
 import { Navigate } from 'react-router-dom';
+import {
+  selectContacts,
+  selectIsLoading,
+  selectError,
+} from 'redux/contacts/contacts.selector';
 
 const ContactsPage = () => {
-  const contacts = useSelector(state => state.contactsStore.contacts);
-  const isLoading = useSelector(state => state.contactsStore.isLoading);
-  const error = useSelector(state => state.contactsStore.error);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from ?? '/');
 

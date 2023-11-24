@@ -1,5 +1,6 @@
 import css from './ContactElement.module.css';
 import svgDelete from '../../images/delete.png';
+
 export const ContactElement = ({ id, name, phone, onRemoveContact }) => {
   return (
     <li className={css.itemContact} key={id}>
