@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Filter } from 'components/Filter/Filter';
+import Filter from 'components/Filter/Filter';
 import { useSelector } from 'react-redux';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -17,6 +17,7 @@ const ContactsPage = () => {
   const error = useSelector(state => state.contactsStore.error);
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from ?? '/');
+
   <Routes>
     <Route path="/contacts/404" element={<Page404 />} />
   </Routes>;

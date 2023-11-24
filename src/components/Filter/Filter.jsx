@@ -1,12 +1,16 @@
 import React from 'react';
-import { filters } from 'redux/filter/filter.reducer';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilterTerm } from 'redux/filter/filter.reducer';
+
 import css from './Filter.module.css';
 
-export function Filter({ value }) {
+const Filter = () => {
+  const filterTerm = useSelector(state => state.filterStore.filterTerm);
   const dispatch = useDispatch();
+
   const changeFilter = event => {
-    dispatch(filters(event.target.value));
+    console.log(event.target.value);
+    dispatch(setFilterTerm(event.target.value));
   };
 
   return (
@@ -16,10 +20,11 @@ export function Filter({ value }) {
         <input
           className={css.inputFind}
           type="text"
-          value={value}
+          value={filterTerm}
           onChange={changeFilter}
         />
       </label>
     </form>
   );
-}
+};
+export default Filter;
