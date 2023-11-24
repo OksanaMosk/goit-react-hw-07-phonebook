@@ -6,7 +6,6 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
-import Notiflix from 'notiflix';
 import css from './ContactsPage.module.css';
 import { useRef } from 'react';
 import Page404 from 'pages/Page404/Page404';
