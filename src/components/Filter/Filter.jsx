@@ -9,7 +9,6 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const changeFilter = event => {
-    console.log(event.target.value);
     dispatch(setFilterTerm(event.target.value));
   };
 

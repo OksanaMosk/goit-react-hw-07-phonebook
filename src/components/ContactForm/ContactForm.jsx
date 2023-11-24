@@ -31,6 +31,22 @@ export function ContactForm() {
       });
       return;
     }
+    if (
+      contacts.find(
+        contact =>
+          contact.phone.toString().toLowerCase() ===
+          phone.toString().toLowerCase()
+      )
+    ) {
+      new Audio(mpFailure).play();
+      Notiflix.Notify.failure(`${phone}  is already in contacts`, {
+        timeout: 1000,
+        width: '300px',
+        borderRadius: '20px',
+        backOverlay: true,
+      });
+      return;
+    }
     const finalContacts = {
       id: nanoid(),
       name,
