@@ -5,6 +5,8 @@ import HomePage from 'pages/HomePage/HomePage';
 import ContactsPage from 'pages/ContactsPage/ContactsPage';
 import AddPage from 'pages/AddPage/AddPage';
 import Layout from 'components/Layout/Layout';
+import Page404 from 'pages/Page404/Page404';
+
 // import { lazy } from 'react';
 
 // const HomePage = lazy(() => import('pages/HomePage/HomePage'));
@@ -18,6 +20,7 @@ export const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/add" element={<AddPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/contacts/404" element={<Page404 />} />
       </Routes>
     </Layout>
   );

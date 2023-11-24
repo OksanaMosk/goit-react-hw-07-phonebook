@@ -1,0 +1,44 @@
+.goBack {
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0 15px 15px 0;
+  width: 70px;
+  height: 20px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  justify-content: center;
+  align-items: center;
+  color: #a0ddf0;
+  font-size: 14px;
+  transition: all 0.003s;
+}
+.errorMainTitle,
+.errorTitle {
+  text-align: center;
+  margin: 0 auto;
+}
+.errorMainTitle {
+  color: white;
+  font-size: 24px;
+  padding-bottom: 100px;
+}
+.errorTitle {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+
+.errorAbout {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 400px;
+}
+.error {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

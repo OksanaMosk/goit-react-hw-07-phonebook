@@ -80,3 +80,10 @@
 .goback:focus {
   background-color: #0a2d39;
 }
+.loader {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0, auto;
+}

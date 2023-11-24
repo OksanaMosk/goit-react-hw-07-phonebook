@@ -6,10 +6,10 @@
   font-size: 20px;
   color: #a0ddf0;
   background-color: rgb(92, 119, 151);
-  width: 120px;
+  width: 50px;
   height: 30px;
   border: 1px solid rgb(56, 76, 99);
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
   text-transform: inherit;
   border: none;
@@ -25,6 +25,14 @@
   flex-direction: column;
   justify-content: center;
 }
-.iconDelete {
-  padding-left: 30px;
+
+.everyItem {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+.everyItem > p {
+  margin-block-end: 10px;
+  margin-block-start: 10px;
 }

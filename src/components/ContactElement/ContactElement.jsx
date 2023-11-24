@@ -3,7 +3,10 @@ import svgDelete from '../../images/delete.png';
 export const ContactElement = ({ id, name, phone, onRemoveContact }) => {
   return (
     <li className={css.itemContact} key={id}>
-      <p>{name + ':  ' + phone}</p>
+      <div className={css.everyItem}>
+        <p>{name}</p>
+        <p>{phone}</p>
+      </div>
       {
         <button
           className={css.buttonDelete}
@@ -11,13 +14,7 @@ export const ContactElement = ({ id, name, phone, onRemoveContact }) => {
           name="delete"
           onClick={() => onRemoveContact(id)}
         >
-          delete
-          <img
-            className={css.iconDelete}
-            src={svgDelete}
-            alt="{svgDelete}"
-            width={20}
-          ></img>
+          <img src={svgDelete} alt="{svgDelete}" width={20}></img>
         </button>
       }
     </li>
