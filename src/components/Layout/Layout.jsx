@@ -1,5 +1,5 @@
 import css from './Layout.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 const Layout = ({ children }) => {

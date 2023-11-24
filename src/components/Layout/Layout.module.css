@@ -78,8 +78,12 @@
   transition: all 0.25s;
   transition: all 0.25s allow-discrete;
   margin-right: 50px;
+  font: inherit;
+  cursor: pointer;
 }
 
-.title:active {
-  background-color: #0a2d39 !important;
+.title:active,
+.title:hover,
+.title:focus {
+  background-color: #0a2d39;
 }

@@ -35,12 +35,13 @@ export const ContactList = () => {
   };
 
   const visContacts = visibleContacts();
-
+  const sorted = [...visContacts].sort((a, b) =>
+    a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
+  );
   return (
     <div className={css.contactContainer}>
-      {/* {isLoading && <Loader />} */}
       <ul className={css.contactList}>
-        {visContacts.map(({ name, phone, id }) => (
+        {sorted.map(({ name, phone, id }) => (
           <ContactElement
             key={id}
             name={name}
